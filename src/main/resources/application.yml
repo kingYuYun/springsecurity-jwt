@@ -1,0 +1,18 @@
+
+# 应用名称配置
+# 此配置用于指定 Spring Boot 应用的名称
+# 使用环境变量 ${APP_NAME} 来动态设置应用名称，默认值为 yuy-smart-springsecurity
+
+# MySQL 数据库配置
+# 此配置用于指定 MySQL 数据库的连接信息
+
+spring:
+  application:
+    name: springsecurity-jwt
+  datasource:
+        url: jdbc:mysql://localhost:3306/smartsecurity?useSSL=false&allowPublicKeyRetrieval=false&serverTimezone=UTC
+        username: root
+        password: Mac188787
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+
