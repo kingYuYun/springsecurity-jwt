@@ -23,10 +23,13 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String login(@RequestBody User user) {
-
+        //1、用户提交用户名和密码
+        //2、将请求信息封装到 Authentication，实现类为UsernamePasswordAuthenticationToken
+        // 创建用户认证令牌，使用用户名和密码作为凭证
         UsernamePasswordAuthenticationToken authentication
                 = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword());
-
+        //3、调用AuthenticationManager接口认证authenticate()
+        // 通过认证管理器执行Spring Security认证流程，返回包含用户详情的认证对象
         Authentication authenticate = authenticationManager.authenticate(authentication);
 
         if (authenticate.isAuthenticated()) { //认证通过

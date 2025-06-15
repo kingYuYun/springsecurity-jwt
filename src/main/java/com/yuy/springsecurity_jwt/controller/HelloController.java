@@ -20,6 +20,8 @@ public class HelloController {
 
     @RequestMapping("/hello/user")
     public String helloUser(){
+        //在Spring boot中使用安全上下文SecurityContext来获取Authentication,
+        // SecurityContext交有SecurityContextHolder来管理,使用以下方法即可获取Authentication
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String name = authentication.getName();
         return "hello-user  "+name;

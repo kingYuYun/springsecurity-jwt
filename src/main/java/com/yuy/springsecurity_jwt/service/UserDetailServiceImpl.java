@@ -22,6 +22,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
      * 需新建配置类注册一个指定的加密方式Bean，或在下一步Security配置类中注册指定
      */
 
+    /*
+    * 5、获取用户信息 loadUserByUsername（）
+    * UserDetailsService接口,加载用户特定数据的核心接口,其中定义了一个根据用户名查询用户信息的方法
+    * UserDetails接口,提供核心用户信息.将UserDetailsService中获取的信息封装为UserDetails对象返回.并将其封装至Authentication对象中
+    * */
     @Override
     public UserDetails loadUserByUsername(String username) {
         //查询用户

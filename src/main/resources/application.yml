@@ -6,13 +6,29 @@
 # MySQL 数据库配置
 # 此配置用于指定 MySQL 数据库的连接信息
 
+#服务配置
+server:
+  #端口
+  port: 8080
 spring:
   application:
     name: springsecurity-jwt
   datasource:
         url: jdbc:mysql://localhost:3306/smartsecurity?useSSL=false&allowPublicKeyRetrieval=false&serverTimezone=UTC
         username: root
-        password: Mac188787
+        password: mac188787
         driver-class-name: com.mysql.cj.jdbc.Driver
 
-
+# MyBatis配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath*:mapper*/*Mapper.xml
+  type-aliases-package: com.demo.project.entity
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰下划线转换
+    map-underscore-to-camel-case: true
+    use-generated-keys: true
+    default-statement-timeout: 60
+    default-fetch-size: 100

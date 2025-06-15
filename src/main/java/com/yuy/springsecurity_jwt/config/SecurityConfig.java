@@ -14,9 +14,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+/**
+ * @EnableWebSecurity是开启SpringSecurity的默认行为
+ */
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true) // 启用全局方法安全
-public class SecurityConfig {
+public class SecurityConfig{
     @Autowired
     private TokenAuthorizationManager tokenAuthorizationManager;
 
@@ -27,7 +30,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests().antMatchers("/security/login").permitAll()
+        http.authorizeHttpRequests().antMatchers("/security/login", "/security/login/**").permitAll()
                 .anyRequest().access(tokenAuthorizationManager);
 
         //关闭session

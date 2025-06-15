@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.yuy</groupId>
-	<artifactId>springsecurity-jwt1</artifactId>
+	<artifactId>springsecurity-jwt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springsecurity-jwt</name>
 	<description>Demo project for Spring Boot</description>
